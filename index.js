@@ -38,6 +38,7 @@ const config = {
     'import',
     'jsx-a11y',
     'react',
+    'react-hooks',
     'sonarjs',
     'unicorn',
   ],
@@ -108,6 +109,9 @@ const config = {
     'react/prefer-stateless-function': 'off',
     'react/jsx-indent-props': 'off',
     'react/jsx-wrap-multilinis': 'off',
+
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
 
     'unicorn/filename-case': 'off',
     'unicorn/catch-error-name': ['error', { name: 'err' }],
