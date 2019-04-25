@@ -1,5 +1,5 @@
-const config = {
-  parser: 'babel-eslint',
+module.exports = {
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2019,
     sourceType: 'module',
@@ -24,17 +24,15 @@ const config = {
     'plugin:react/recommended',
     'prettier/react',
     'prettier/unicorn',
-    'prettier/flowtype',
-    'plugin:flowtype/recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
   settings: {
     'import/ignore': ['node_modules'],
-    'import/extensions': ['.js', '.json'],
+    'import/extensions': ['.tsx', '.ts', '.js', '.json'],
   },
 
   plugins: [
-    'eslint-comments',
-    'flowtype',
+    '@typescript-eslint',
     'import',
     'jsx-a11y',
     'react',
@@ -69,9 +67,6 @@ const config = {
     ],
     'prefer-const': 'error',
 
-    'eslint-comments/no-unused-disable': 'error',
-    'eslint-comments/no-unused-enable': 'error',
-
     'import/default': 'error',
     'import/named': 'error',
     'import/namespace': 'error',
@@ -89,34 +84,23 @@ const config = {
     'jsx-a11y/no-access-key': 'error',
     'jsx-a11y/anchor-is-valid': 'off',
 
-    // 'node/no-deprecated-api': 'error',
-    // 'node/process-exit-as-throw': 'error',
-
-    'flowtype/define-flow-type': 'error',
-    'flowtype/require-valid-file-annotation': 'error',
-    'flowtype/use-flow-type': 'error',
-    'flowtype/array-style-complex-type': ['error', 'verbose'],
-    'flowtype/array-style-simple-type': ['error', 'verbose'],
-
     'react/jsx-indent': 'off',
     'react/require-default-props': 'off',
     'react/forbid-prop-types': ['error', { forbid: ['any'] }],
-    'react/default-props-match-prop-types': 'off', // Flow
-    'react/jsx-curly-brace-presence': 'off', // styled-jsx
+    'react/jsx-curly-brace-presence': 'off',
     'react/jsx-filename-extension': ['error', { extensions: ['.js'] }],
     'react/no-array-index-key': 'off',
-    'react/no-unused-prop-types': 'off', // Flow
     'react/prefer-stateless-function': 'off',
     'react/jsx-indent-props': 'off',
     'react/jsx-wrap-multilinis': 'off',
 
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+
+    '@typescript-eslint/indent': 'off',
 
     'unicorn/filename-case': 'off',
     'unicorn/catch-error-name': ['error', { name: 'err' }],
     'unicorn/prevent-abbreviations': 'off',
   },
 };
-
-module.exports = config;
